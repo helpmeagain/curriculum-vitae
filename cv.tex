@@ -94,36 +94,47 @@
 %for social icons
 \usepackage{fontawesome5}
 
+% Para tradução do /today
 \usepackage[portuguese]{babel}
 
-%debug page outer frames
-%\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
+% #1 Título | #2 Período | #3 Meta/observação (ex.: Tempo integral; Fullstack)
+\newenvironment{jobshort}[3]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \textbf{#1}\ \ {\footnotesize\if\relax\detokenize{#3}\relax\else #3\fi} & \hfill & #2 \\
     \end{tabularx}
     }
     {
     }
 
-\newenvironment{joblong}[2]
+% #1 Título | 2# Meta/observação (ex.: Remoto)
+\newenvironment{joblong}[2]{
+  \begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textbf{#1} & \if\relax\detokenize{#2}\relax\else #2\fi \\
+  \end{tabularx}
+  \begin{itemize}[leftmargin=1.5em,label={},itemsep=5pt,topsep=0pt]
+}{
+  \end{itemize}
+}
+
+% #1 Título | #2 Período | #3 Meta/observação (ex.: Tempo integral; Fullstack)
+\newenvironment{role}[3]{
+  \item
+  \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    {\small\textbf{#1}}\ \ {\footnotesize\if\relax\detokenize{#3}\relax\else #3\fi} & \hfill & #2 \\
+  \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{education}[3]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \textbf{#1} - \textbf{#2} & \hfill &  #3 \\[3.75pt]
     \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
     }
     {
-    \end{itemize}
-    \end{minipage}    
     }
-
-
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -137,17 +148,11 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Felipe da Costa Marques} \\[7.5pt]
 \href{https://github.com/helpmeagain}{\raisebox{-0.05\height}\faGithub\ helpmeagain} \ $|$ \ 
 \href{https://www.linkedin.com/in/felipecomarques/}{\raisebox{-0.05\height}\faLinkedin\ felipecomarques} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \
+\href{https://helpmeagain.github.io/}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \
 \href{mailto:felipe.comarques1208@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ felipe.comarques1208@gmail.com} \\
 \end{tabularx}
 
@@ -155,43 +160,59 @@
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
 \section{Sobre}
-Sou desenvolvedor full stack (...)
+Desenvolvedor Full Stack com experiência em aplicações web e mobile, atuando em ambientes ágeis e colaborativos. Tenho foco em C{\texttt{\#}}, .NET, TypeScript, NestJS, Angular, React e Vue. Busco desenvolver soluções escaláveis e de qualidade, com atenção à arquitetura, desempenho e experiência do usuário.
 
-%Experience
 \section{Experiência profissional}
 
-\begin{jobshort}{Compass Uol}{Maio 2024 - Janeiro 2025}
-Atuei como (...)
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    \item JavaScript, TypeScript, NestJS, Angular, Ionic, MongoDB, Redis
-\end{itemize}
-\end{jobshort}
+% \begin{jobshort}{Empresa aqui}{Mês 20XX - Mês 20XX}{Júnior, Code}
+% Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum perferendis esse quibusdam, quam deleniti quisquam veniam sunt aperiam eaque quos pariatur provident odit distinctio quod dolore aut ex ratione quasi?
+% \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+%     \item Stack: Mais, curto, e, sucinto
+% \end{itemize}
+% \end{jobshort}
+
+\begin{joblong}{Compass UOL}{}
+  \begin{role}{Desenvolvedor Júnior}{Maio 2024 — Jan 2025}{Fullstack}
+    Atuei contribuindo para o desenvolvimento e manutenção de sistemas voltados à gestão de conectividade digital. Fui responsável pela implementação de novas funcionalidades em microserviços, criação de relatórios de usuários, adaptação de interfaces e realização de releases em ambiente produtivo. Minha atuação contribuiu para melhorar a estabilidade das aplicações e otimizar o fluxo de entrega de novas funcionalidades.
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+    % \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+        \item Stack: JavaScript, TypeScript, NestJS, Express, Angular, Ionic, MongoDB, Redis, Azure DevOps.
+    \end{itemize}
+  \end{role}
+
+  \begin{role}{Estagiário}{Maio 2023 — Out 2023}{Backend}
+    Atuei em um ambiente ágil com Scrum, participando do desenvolvimento e manutenção de APIs REST em Node.js, TypeScript, Express e MongoDB. Colaborei na implementação de autenticação, segurança e na documentação com Swagger, além de realizar testes unitários e de integração. Explorei serviços AWS, fortalecendo conhecimentos em cloud e arquitetura de software.
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+        \item Stack: TypeScript, Express, MongoDB, Docker, AWS.
+    \end{itemize}
+  \end{role}
+\end{joblong}
   
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
+
 \section{Formação}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2021 - presente & Bacharelado em Sistemas de Informação no \textbf{IFCE \textit{campus} Cedro} \\ 
+    
+\begin{education}{IFCE Campus Cedro}{Bacharelado em Sistemas de Informação}{2021 — Presente}
+Estrutura de Dados, Sistema Operacionais, Engenharia de Software, Programação Web, Inteligência Computacional, Desenvolvimento de Jogos, Gerência de Projetos, Sistemas de Apoio à Decisão.
+\end{education}
 
-2018 - 2020 & Ensino médio integrado ao Técnico em Informática no \textbf{IFCE \textit{campus} Cedro} \\
+\begin{education}{IFCE Campus Cedro}{Ensino Médio Integrado ao Técnico em Informática}{2017 — 2020}
+Lógica de Programação, Banco de Dados, Programação Orientada a Objeto, Interface e Ergonomia, Gestão e Empreendedorismo.
+\end{education}
 
-% 2022 & Class 12th Some Board \hfill  (Grades) \\
-\end{tabularx}
 
-%Projects
 \section{Projetos}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Blackwell} & \hfill \href{https://github.com/helpmeagain/blackwell}{Repositório} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{API desenvolvida (...)}  \\
+\multicolumn{2}{@{}X@{}}{API e aplicação web/mobile desenvolvida para geração de prontuários eletrônicos de fisioterapia, substituindo o uso de registros em papel em uma clínica-escola. A solução foi estruturada com Domain-Driven Design e Clean Architecture, garantindo escalabilidade e facilidade de manutenção. O projeto otimizou o fluxo de atendimento, reduziu erros no registro de dados e agilizou o acesso às informações dos pacientes.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}Stack: TypeScript, NestJS, Prisma, Vitest, PostgreSQL, Redis, Docker, React Native, Expo.}\\[1pt]
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Project Kiwi} & \hfill \href{https://github.com/helpmeagain/project-kiwi}{Repositório} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Jogo educacional (...)}  \\
+\multicolumn{2}{@{}X@{}}{Jogo educacional para ensino de inglês, desenvolvido para alunos do ensino médio, com o objetivo de tornar o aprendizado gamificado mais colaborativo e interativo. O projeto foi implementado com foco em experiência do usuário, jogabilidade em duplas e usabilidade. Os testes com estudantes mostraram que a adição do modo multijogador aumentou o engajamento, a aceitação e o interesse pelo conteúdo.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}Stack: Godot, GDScript, Nakama, Docker.}\\[1pt]
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -208,10 +229,10 @@ Atuei como (...)
 %----------------------------------------------------------------------------------------
 \section{Habilidades}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Desenvolvimento Web & \normalsize{JavaScript, TypeScript, C{\texttt{\#}}, NodeJS, Express, NestJS, .NET, React, NextJS, Angular, VueJS, NuxtJS}\\
+Desenvolvimento Web & \normalsize{JavaScript, TypeScript, C{\texttt{\#}}, NodeJS, Express, NestJS, .NET, React, NextJS, Angular, VueJS, NuxtJS, HTML, CSS, Tailwind}\\
 Desenvolvimento Mobile & \normalsize{JavaScript, TypeScript, React Native, Expo, Ionic}\\
 Desenvolvimento de Jogos & \normalsize{Godot}\\
-Miscelânea  &  \normalsize{PostgreSQL, MongoDB, Redis, Docker}\\  
+Miscelânea  &  \normalsize{PostgreSQL, MongoDB, Redis, Docker, AWS}\\  
 \end{tabularx}
 
 \vfill

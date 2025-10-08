@@ -97,31 +97,44 @@
 %debug page outer frames
 %\usepackage{showframe}
 
-
-% job listing environments
-\newenvironment{jobshort}[2]
+% #1 Título | #2 Período | #3 Meta/observação (ex.: Tempo integral; Fullstack)
+\newenvironment{jobshort}[3]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \textbf{#1}\ \ {\footnotesize\if\relax\detokenize{#3}\relax\else #3\fi} & \hfill & #2 \\
     \end{tabularx}
     }
     {
     }
 
-\newenvironment{joblong}[2]
+% #1 Título | 2# Meta/observação (ex.: Remoto)
+\newenvironment{joblong}[2]{
+  \begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textbf{#1} & \if\relax\detokenize{#2}\relax\else #2\fi \\
+  \end{tabularx}
+  \begin{itemize}[leftmargin=1.5em,label={},itemsep=5pt,topsep=0pt]
+}{
+  \end{itemize}
+}
+
+% #1 Título | #2 Período | #3 Meta/observação (ex.: Tempo integral; Fullstack)
+\newenvironment{role}[3]{
+  \item
+  \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    {\small\textbf{#1}}\ \ {\footnotesize\if\relax\detokenize{#3}\relax\else #3\fi} & \hfill & #2 \\
+  \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{education}[3]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \textbf{#1} - \textbf{#2} & \hfill &  #3 \\[3.75pt]
     \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
     }
     {
-    \end{itemize}
-    \end{minipage}    
     }
-
-
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -135,17 +148,11 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Felipe da Costa Marques} \\[7.5pt]
 \href{https://github.com/helpmeagain}{\raisebox{-0.05\height}\faGithub\ helpmeagain} \ $|$ \ 
 \href{https://www.linkedin.com/in/felipecomarques/}{\raisebox{-0.05\height}\faLinkedin\ felipecomarques} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \
+\href{https://helpmeagain.github.io/}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \
 \href{mailto:felipe.comarques1208@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ felipe.comarques1208@gmail.com} \\
 \end{tabularx}
 
@@ -153,43 +160,59 @@
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
 \section{Summary}
-Full stack developer (...).
+Full Stack Developer with experience in web and mobile applications, working in agile and collaborative environments. Focused on C{\texttt{\#}}, .NET, TypeScript, NestJS, Angular, React, and Vue. I aim to build scalable, high-quality solutions with attention to architecture, performance, and user experience.
 
-%Experience
 \section{Work Experience}
 
-\begin{jobshort}{Compass Uol}{May 2024 - Jan 2025}
-(...)
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    \item JavaScript, TypeScript, NestJS, Angular, Ionic, MongoDB, Redis
-\end{itemize}
-\end{jobshort}
+% \begin{jobshort}{Empresa aqui}{Mês 20XX - Mês 20XX}{Júnior, Code}
+% Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum perferendis esse quibusdam, quam deleniti quisquam veniam sunt aperiam eaque quos pariatur provident odit distinctio quod dolore aut ex ratione quasi?
+% \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+%     \item Stack: Mais, curto, e, sucinto
+% \end{itemize}
+% \end{jobshort}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
+\begin{joblong}{Compass UOL}{}
+  \begin{role}{Junior Developer}{May 2024 — Jan 2025}{Fullstack}
+    Contributed to the development and maintenance of systems focused on digital connectivity management. Responsible for implementing new features in microservices, creating user reports, adapting mobile interfaces, and performing production releases. My work helped improve application stability and optimize the delivery flow of new features.
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+    % \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+        \item Stack: JavaScript, TypeScript, NestJS, Express, Angular, Ionic, MongoDB, Redis, Azure DevOps.
+    \end{itemize}
+  \end{role}
+
+  \begin{role}{Intern}{May 2023 — Oct 2023}{Backend}
+    Worked in an agile environment using Scrum, participating in the development and maintenance of REST APIs using Node.js, TypeScript, Express, and MongoDB. Collaborated on implementing authentication, security, and API documentation with Swagger, as well as performing unit and integration testing. Explored AWS services, strengthening skills in cloud and software architecture.
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+        \item Stack: TypeScript, Express, MongoDB, Docker, AWS.
+    \end{itemize}
+  \end{role}
+\end{joblong}
+  
+
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2021 - present & Bachelor's Degree in Information Systems at \textbf{IFCE \textit{Cedro campus}} \\ 
+    
+\begin{education}{IFCE Cedro Campus}{Bachelor’s in Information Systems}{2021 — Present}
+Data Structures, Operating Systems, Software Engineering, Web Programming, Computational Intelligence, Game Development, Project Management, Decision Support Systems.
+\end{education}
 
-2018 - 2020 & Technical High School in Informatics at \textbf{IFCE \textit{Cedro campus}} \\
+\begin{education}{IFCE Cedro Campus}{High School with Technical Program in Informatics}{2017 — 2020}
+Programming Logic, Databases, Object-Oriented Programming, Interface Design and Ergonomics, Management, and Entrepreneurship.
+\end{education}
 
-% 2022 & Class 12th Some Board \hfill  (Grades) \\
-\end{tabularx}
 
-%Projects
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Blackwell} & \hfill \href{https://github.com/helpmeagain/blackwell}{Repository} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{API developed (...)}  \\
+\multicolumn{2}{@{}X@{}}{Web and mobile API developed for generating electronic physiotherapy records, replacing paper-based systems in a teaching clinic. The solution was built using Domain-Driven Design and Clean Architecture, ensuring scalability and maintainability. The project optimized patient workflow, reduced data entry errors, and improved access to clinical information.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}Stack: TypeScript, NestJS, Prisma, Vitest, PostgreSQL, Redis, Docker, React Native, Expo.}\\[1pt]
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Project Kiwi} & \hfill \href{https://github.com/helpmeagain/project-kiwi}{Repository} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Educacional game (...)}  \\
+\multicolumn{2}{@{}X@{}}{Educational game for English learning, developed for high school students with the goal of making gamified learning more collaborative and interactive. Implemented with focus on user experience, paired gameplay, and usability. User testing showed that the multiplayer mode increased engagement, acceptance, and overall interest in the content.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}Stack: Godot, GDScript, Nakama, Docker.}\\[1pt]
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -206,10 +229,10 @@ Full stack developer (...).
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Web Development & \normalsize{JavaScript, TypeScript, C{\texttt{\#}}, NodeJS, Express, NestJS, .NET, React, NextJS, Angular, VueJS, NuxtJS}\\
+Web Development & \normalsize{JavaScript, TypeScript, C{\texttt{\#}}, NodeJS, Express, NestJS, .NET, React, NextJS, Angular, VueJS, NuxtJS, HTML, CSS, Tailwind}\\
 Mobile Development & \normalsize{JavaScript, TypeScript, React Native, Expo, Ionic}\\
 Game Development & \normalsize{Godot}\\
-Miscellaneous  &  \normalsize{PostgreSQL, MongoDB, Redis, Docker}\\  
+Miscellaneous  &  \normalsize{PostgreSQL, MongoDB, Redis, Docker, AWS}\\  
 \end{tabularx}
 
 \vfill
