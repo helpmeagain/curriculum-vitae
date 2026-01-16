@@ -5,7 +5,7 @@
 Curriculum Vitæ containing information about professional experience, projects, education, and more.
 
 - [Currículo em Português](https://helpmeagain.github.io/curriculum-vitae/)
-- [Curriculum in English](https://helpmeagain.github.io/curriculum-vitae/cv-en.pdf)
+- [Curriculum in English](https://helpmeagain.github.io/curriculum-vitae/curriculum-felipe-marques.pdf)
 
 ## Local installation
 

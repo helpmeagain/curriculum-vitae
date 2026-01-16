@@ -1,4 +1,4 @@
-NAME_PT=cv
+NAME_PT=curriculo-felipe-marques
 NAME_EN=cv-en
 OUTDIR=dist
 
