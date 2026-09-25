@@ -44,6 +44,9 @@
 % ]
 % {Fontin.otf}
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
@@ -76,6 +79,9 @@
 \usepackage{multicol}
 \usepackage{multirow}
 
+\input{glyphtounicode}
+\pdfgentounicode=1
+
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
@@ -94,10 +100,10 @@
 %for social icons
 \usepackage{fontawesome5}
 
-%debug page outer frames
-%\usepackage{showframe}
+% For \today translation
+\usepackage[english]{babel}
 
-% #1 Título | #2 Período | #3 Meta/observação (ex.: Tempo integral; Fullstack)
+% #1 Title | #2 Period | #3 Meta/note (e.g.: Full-time; Fullstack)
 \newenvironment{jobshort}[3]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
@@ -107,7 +113,7 @@
     {
     }
 
-% #1 Título | 2# Meta/observação (ex.: Remoto)
+% #1 Title | #2 Meta/note (e.g.: Remote)
 \newenvironment{joblong}[2]{
   \begin{tabularx}{\linewidth}{@{}l X@{}}
     \textbf{#1} & \if\relax\detokenize{#2}\relax\else #2\fi \\
@@ -117,7 +123,7 @@
   \end{itemize}
 }
 
-% #1 Título | #2 Período | #3 Meta/observação (ex.: Tempo integral; Fullstack)
+% #1 Title | #2 Period | #3 Meta/note (e.g.: Full-time; Fullstack)
 \newenvironment{role}[3]{
   \item
   \begin{tabularx}{\linewidth}{@{}l X r@{}}
@@ -167,80 +173,73 @@
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-\section{Objective}
-Software engineer with experience in web and mobile application development, as well as knowledge of offensive cybersecurity. Seeking opportunities in the development of scalable and well-structured applications, using software engineering best practices, modern technologies, and secure solutions.
+\section{Summary}
+Software engineer with experience in web, mobile, and game development, currently pursuing a postgraduate degree in Cybersecurity. I work with vulnerability analysis and system hardening, and I am seeking opportunities in application security and software development.
+
 \section{Professional Experience}
 
-\begin{jobshort}{Compass UOL}{May 2024 — Jan 2025}{Trainee, Full Stack}
-Worked on the development and maintenance of systems focused on the management of telecommunications applications, contributing to the implementation of new features in microservices, creation of user reports, interface adaptations, and execution of production releases. This work resulted in increased application stability and optimization of the feature delivery workflow.
+\begin{jobshort}{Lenovo / Laboratório de Sistemas e Banco de Dados}{Mar 2026 — Present}{Resident}
+I work as a security analyst evaluating applications and low-level components on Lenovo platforms, identifying vulnerabilities and proposing fixes. During the classroom period of the residency, I deepened my studies in offensive security, reverse engineering, and secure development. I was later assigned to the Linux security and systems administration team, where I now contribute to the hardening and analysis of Linux images.
 \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
-    \item \textbf{Stack}: JavaScript, TypeScript, NestJS, Express, Angular, Ionic, MongoDB, Redis, Azure DevOps.
+    \item \textbf{Stack}: C, C++, Python, Kali Linux, Metasploit, Nmap, Burp Suite, Wireshark, OWASP Top 10, SELinux/AppArmor, iptables.
 \end{itemize}
 \end{jobshort}
 
-\begin{jobshort}{Compass UOL}{May 2023 — Oct 2023}{Backend Intern}
-Worked in an agile environment using Scrum, contributing to the development and maintenance of REST APIs with Node.js, TypeScript, Express, and MongoDB. Collaborated on the implementation of authentication, security, documentation, and endpoints, as well as the creation of unit and integration tests. Also utilized AWS services for application deployment and maintenance in a production environment.
-\begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
-    \item \textbf{Stack}: TypeScript, Express, MongoDB, Docker, AWS.
-\end{itemize}
-\end{jobshort}
-
-% \begin{joblong}{Compass UOL}{}
-%   \begin{role}{Desenvolvedor Trainee}{Maio 2024 — Jan 2025}{Backend}
-%     Atuei contribuindo para o desenvolvimento e manutenção de sistemas voltados à gestão de conectividade digital. Fui responsável pela implementação de novas funcionalidades em microserviços, criação de relatórios de usuários, adaptação de interfaces e realização de releases em ambiente produtivo. Minha atuação contribuiu para melhorar a estabilidade das aplicações e otimizar o fluxo de entrega de novas funcionalidades.
-%     \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
-%     % \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-%         \item Stack: JavaScript, TypeScript, NestJS, Express, Angular, Ionic, MongoDB, Redis, Azure DevOps.
-%     \end{itemize}
-%   \end{role}
-
-%   \begin{role}{Estagiário}{Maio 2023 — Out 2023}{Backend}
-%     Atuei em um ambiente ágil com Scrum, participando do desenvolvimento e manutenção de APIs REST em Node.js, TypeScript, Express e MongoDB. Colaborei na implementação de autenticação, segurança e na documentação com Swagger, além de realizar testes unitários e de integração. Explorei serviços AWS, fortalecendo conhecimentos em cloud e arquitetura de software.
-%     \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
-%         \item Stack: TypeScript, Express, MongoDB, Docker, AWS.
-%     \end{itemize}
-%   \end{role}
-% \end{joblong}
+\begin{joblong}{Compass UOL}{}
+  \begin{role}{Trainee Developer}{May 2024 — Jan 2025}{Fullstack}
+    I developed and maintained systems for managing telecommunications applications, implementing new features in microservices, building user reports, adapting interfaces, and performing releases to the production environment. This work increased application stability and streamlined the delivery flow of new features.
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+        \item \textbf{Stack}: JavaScript, TypeScript, NestJS, Express, Angular, Ionic, MongoDB, Redis, Azure DevOps.
+    \end{itemize}
+  \end{role}
+  \begin{role}{Intern}{May 2023 — Oct 2023}{Backend}
+    I worked in an agile environment using Scrum, developing and maintaining REST APIs with Node.js, TypeScript, Express, and MongoDB. I helped implement authentication, security, documentation, and endpoints, and wrote unit and integration tests. I also used AWS services to deploy and maintain the application in production.
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+        \item \textbf{Stack}: TypeScript, Express, MongoDB, Docker, AWS.
+    \end{itemize}
+  \end{role}
+\end{joblong}
   
 
 \section{Education}
     
-\begin{education}{Postgraduate Degree in Cybersecurity}{UFC Pici Campus}{2026 — Present}
-Cryptography, Network Security, Operating System Security, Infrastructure.
+\begin{education}{Postgraduate Degree in Cybersecurity}{UFC Campus Pici}{2026 — Present}
+Cryptography, Network Security, Operating Systems Security, Infrastructure.
 \end{education}
 
-\begin{education}{Bachelor’s Degree in Information Systems}{IFCE Cedro Campus}{2021 — 2026}
+\begin{education}{Bachelor's Degree in Information Systems}{IFCE Campus Cedro}{2021 — 2026}
 Data Structures, Software Engineering, Web Programming, Project Management.
 \end{education}
 
-\begin{education}{Technical High School in Information Technology}{IFCE Cedro Campus}{2017 — 2020}
+\begin{education}{Technical High School in Information Technology}{IFCE Campus Cedro}{2017 — 2020}
 Programming Logic, Databases, Object-Oriented Programming.
 \end{education}
 
-% \section{Projects}
-% 
-% \begin{tabularx}{\linewidth}{ @{}l r@{} }
-% \textbf{Weather Dashboard} & \hfill \href{https://youtu.be/OMvqebhPMrA}{Demo} — \href{https://github.com/helpmeagain/weather-dashboard}{Repository} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{Dashboard developed for visualization and analysis of climate data, structured with a microservices-based architecture. The system performs periodic collection of meteorological data, intermediate processing, persistence, and AI-driven insight generation, providing an interactive view for the end user.}  \\[-2pt]
-% \multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: Python, Go, TypeScript, NestJS, React, Vite, MongoDB, RabbitMQ, Ollama, Docker.}\\[1pt]
-% \end{tabularx}
-% 
-% \begin{tabularx}{\linewidth}{ @{}l r@{} }
-% \textbf{Project Kiwi} & \hfill \href{https://helpmeagain.itch.io/project-kiwi}{Demo} — \href{https://github.com/helpmeagain/project-kiwi}{Repository} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{Educational game designed to teach English with the goal of making learning more collaborative and interactive through gamification. The project was implemented with a focus on user experience, cooperative gameplay, and usability. Testing with students showed that the addition of multiplayer mode increased engagement, acceptance, and interest in the content.}  \\[-2pt]
-% \multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: Godot, GDScript, Nakama, Docker.}\\[1pt]
-% \end{tabularx}
-% 
-% \begin{tabularx}{\linewidth}{ @{}l r@{} }
-% \textbf{Blackwell} & \hfill \href{https://github.com/helpmeagain/blackwell}{Repository} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{API and mobile application developed for generating electronic physiotherapy medical records for a teaching clinic. The solution was structured using Domain-Driven Design and Clean Architecture, ensuring scalability and ease of maintenance. The project optimized patient care workflows, reduced data entry errors, and improved access to patient information.}  \\[-2pt]
-% \multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: TypeScript, NestJS, Prisma, Vitest, PostgreSQL, Redis, Docker, React Native, Expo.}\\[1pt]
-% \end{tabularx}
+
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Weather Dashboard} & \hfill \href{https://youtu.be/OMvqebhPMrA}{Demo} — \href{https://github.com/helpmeagain/weather-dashboard}{Repository} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Dashboard for visualizing and analyzing weather data, built on a microservices architecture. The system periodically collects weather data, performs intermediate processing, persists it, and generates AI-driven insights, giving the end user an interactive view.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: Python, Go, TypeScript, NestJS, React, Vite, MongoDB, RabbitMQ, Ollama, Docker.}\\[1pt]
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Project Kiwi} & \hfill \href{https://helpmeagain.itch.io/project-kiwi}{Demo} — \href{https://github.com/helpmeagain/project-kiwi}{Repository} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Educational game for teaching English, designed to make gamified learning more collaborative and interactive. The project focused on user experience, two-player gameplay, and usability. Tests with students showed that adding a multiplayer mode increased engagement, acceptance, and interest in the content.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: Godot, GDScript, Nakama, Docker.}\\[1pt]
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Blackwell} & \hfill \href{https://github.com/helpmeagain/blackwell}{Repository} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{API and mobile application for generating electronic physiotherapy records for a teaching clinic. The solution was built with Domain-Driven Design and Clean Architecture, ensuring scalability and maintainability. The project streamlined the care workflow, reduced data entry errors, and sped up access to patient information.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: TypeScript, NestJS, Prisma, Vitest, PostgreSQL, Redis, Docker, React Native, Expo.}\\[1pt]
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
-% \section{Publicações}
+% \section{Publications}
 % \begin{refsection}[citations.bib]
 % \nocite{*}
 % \printbibliography[heading=none]
@@ -252,11 +251,11 @@ Programming Logic, Databases, Object-Oriented Programming.
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
 \textbf{Programming Languages} & \normalsize{JavaScript, TypeScript, C{\texttt{\#}}, C, Go, Java, Python.}\\
-\textbf{Web Development} & \normalsize{NodeJS, Express, NestJS, React, NextJS, Angular, VueJS, NuxtJS, HTML, CSS, Tailwind, .NET, Entity Framework, Django, Flask, Spring Boot.}\\
+\textbf{Web Development} & \normalsize{NodeJS, Express, NestJS, React, NextJS, Angular, VueJS, NuxtJS, Tailwind, .NET}\\
 \textbf{Mobile Development} & \normalsize{React Native, Expo, Ionic.}\\
-\textbf{Cybersecurity} & \normalsize{Pentesting, Cryptography, Data Protection, Cryptographic Hashing, Offensive and Defensive Security, System Hardening.}\\
+\textbf{Cybersecurity} & \normalsize{Pentest, Cryptography, Linux, Burp Suite, OWASP Top 10, Wireshark.}\\
 \textbf{Databases}  &  \normalsize{MySQL, SQL Server, PostgreSQL, MongoDB, Redis.}\\
-\textbf{Miscellaneous}  &  \normalsize{Docker, AWS, Google Cloud, Azure DevOps, Ollama, Godot.}\\  
+\textbf{Tools and Cloud}  &  \normalsize{Docker, AWS, Google Cloud, Azure DevOps, Ollama, Godot.}\\  
 \end{tabularx}
 
 \vfill

@@ -79,6 +79,9 @@
 \usepackage{multicol}
 \usepackage{multirow}
 
+\input{glyphtounicode}
+\pdfgentounicode=1
+
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
@@ -170,24 +173,46 @@
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-\section{Objetivos}
-Engenheiro de software com experiência em desenvolvimento de aplicações web e mobile, assim como conhecimentos em segurança cibernética ofensiva. Busco oportunidades em desenvolvimento de aplicações escaláveis e bem estruturadas, utilizando boas práticas de engenharia de software, tecnologias modernas e soluções seguras.
+\section{Resumo}
+Engenheiro de software com experiência em desenvolvimento web, mobile e de jogos, e pós-graduando em Segurança Cibernética. Atuo com análise de vulnerabilidades e hardening de sistemas e busco oportunidades em segurança de aplicações e desenvolvimento de software.
 
 \section{Experiência profissional}
 
-\begin{jobshort}{Compass UOL}{Maio 2024 — Jan 2025}{Trainee, Fullstack}
-Atuei no desenvolvimento e manutenção de sistemas voltados à gestão de aplicativos de telecomunicações, contribuindo para a implementação de novas funcionalidades em microserviços, criação de relatórios de usuários, adaptação de interfaces e realização de releases em ambiente de produção. Essa atuação resultou no aumento da estabilidade das aplicações e na otimização do fluxo de entrega de novas funcionalidades.
+\begin{jobshort}{Lenovo / Laboratório de Sistemas e Banco de Dados}{Março 2026 — Atualmente}{Residente}
+Atuo como analista de segurança na avaliação de aplicações e componentes de baixo nível em plataformas Lenovo, identificando vulnerabilidades e propondo correções. Aprofundei estudos em segurança ofensiva, engenharia reversa e desenvolvimento seguro ao longo do período de aulas da residência. Posteriormente, fui alocado no time de segurança em Linux e administração de sistemas, onde passei a contribuir com o hardening e análise de imagens Linux.
 \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
-    \item \textbf{Stack}: JavaScript, TypeScript, NestJS, Express, Angular, Ionic, MongoDB, Redis, Azure DevOps.
+    \item \textbf{Stack}: C, C++, Python, Kali Linux, Metasploit, Nmap, Burp Suite, Wireshark, OWASP Top 10, SELinux/AppArmor, iptables.
 \end{itemize}
 \end{jobshort}
 
-\begin{jobshort}{Compass UOL}{Maio 2023 — Out 2023}{Estagiário, Backend}
-Atuei em um ambiente ágil utilizando Scrum, participando do desenvolvimento e manutenção de APIs REST com Node.js, TypeScript, Express e MongoDB. Colaborei na implementação de autenticação, segurança, documentação e endpoints, além da criação de testes unitários e de integração. Também utilizei serviços AWS para o deploy e a manutenção da aplicação em ambiente de produção.
-\begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
-    \item \textbf{Stack}: TypeScript, Express, MongoDB, Docker, AWS.
-\end{itemize}
-\end{jobshort}
+% \begin{jobshort}{Compass UOL}{Maio 2024 — Jan 2025}{Trainee, Fullstack}
+% Atuei no desenvolvimento e manutenção de sistemas voltados à gestão de aplicativos de telecomunicações, contribuindo para a implementação de novas funcionalidades em microserviços, criação de relatórios de usuários, adaptação de interfaces e realização de releases em ambiente de produção. Essa atuação resultou no aumento da estabilidade das aplicações e na otimização do fluxo de entrega de novas funcionalidades.
+% \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+%     \item \textbf{Stack}: JavaScript, TypeScript, NestJS, Express, Angular, Ionic, MongoDB, Redis, Azure DevOps.
+% \end{itemize}
+% \end{jobshort}
+
+% \begin{jobshort}{Compass UOL}{Maio 2023 — Out 2023}{Estagiário, Backend}
+% Atuei em um ambiente ágil utilizando Scrum, participando do desenvolvimento e manutenção de APIs REST com Node.js, TypeScript, Express e MongoDB. Colaborei na implementação de autenticação, segurança, documentação e endpoints, além da criação de testes unitários e de integração. Também utilizei serviços AWS para o deploy e a manutenção da aplicação em ambiente de produção.
+% \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+%     \item \textbf{Stack}: TypeScript, Express, MongoDB, Docker, AWS.
+% \end{itemize}
+% \end{jobshort}
+
+\begin{joblong}{Compass UOL}{}
+  \begin{role}{Desenvolvedor Trainee}{Maio 2024 — Jan 2025}{Fullstack}
+    Atuei no desenvolvimento e manutenção de sistemas voltados à gestão de aplicativos de telecomunicações, contribuindo para a implementação de novas funcionalidades em microserviços, criação de relatórios de usuários, adaptação de interfaces e realização de releases em ambiente de produção. Essa atuação resultou no aumento da estabilidade das aplicações e na otimização do fluxo de entrega de novas funcionalidades.
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+        \item \textbf{Stack}: JavaScript, TypeScript, NestJS, Express, Angular, Ionic, MongoDB, Redis, Azure DevOps.
+    \end{itemize}
+  \end{role}
+  \begin{role}{Estagiário}{Maio 2023 — Out 2023}{Backend}
+    Atuei em um ambiente ágil utilizando Scrum, participando do desenvolvimento e manutenção de APIs REST com Node.js, TypeScript, Express e MongoDB. Colaborei na implementação de autenticação, segurança, documentação e endpoints, além da criação de testes unitários e de integração. Também utilizei serviços AWS para o deploy e a manutenção da aplicação em ambiente de produção.
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt,label={}]
+        \item \textbf{Stack}: TypeScript, Express, MongoDB, Docker, AWS.
+    \end{itemize}
+  \end{role}
+\end{joblong}
 
 % \begin{joblong}{Compass UOL}{}
 %   \begin{role}{Desenvolvedor Trainee}{Maio 2024 — Jan 2025}{Backend}
@@ -222,25 +247,25 @@ Lógica de Programação, Banco de Dados, Programação Orientada a Objeto.
 \end{education}
 
 
-% \section{Projetos}
-% 
-% \begin{tabularx}{\linewidth}{ @{}l r@{} }
-% \textbf{Weather Dashboard} & \hfill \href{https://youtu.be/OMvqebhPMrA}{Demonstração} — \href{https://github.com/helpmeagain/weather-dashboard}{Repositório} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{Dashboard desenvolvido para visualização e análise de dados climáticos, estruturado em uma arquitetura baseada em microsserviços. O sistema realiza a coleta periódica de dados meteorológicos, processamento intermediário, persistência e geração de insights por IA, oferecendo uma visão interativa ao usuário final.}  \\[-2pt]
-% \multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: Python, Go, TypeScript, NestJS, React, Vite, MongoDB, RabbitMQ, Ollama, Docker.}\\[1pt]
-% \end{tabularx}
-% 
-% \begin{tabularx}{\linewidth}{ @{}l r@{} }
-% \textbf{Project Kiwi} & \hfill \href{https://helpmeagain.itch.io/project-kiwi}{Demonstração} — \href{https://github.com/helpmeagain/project-kiwi}{Repositório} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{Jogo educacional para ensino de inglês com o objetivo de tornar o aprendizado gamificado mais colaborativo e interativo. O projeto foi implementado com foco em experiência do usuário, jogabilidade em duplas e usabilidade. Os testes com estudantes mostraram que a adição do modo multijogador aumentou o engajamento, a aceitação e o interesse pelo conteúdo.}  \\[-2pt]
-% \multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: Godot, GDScript, Nakama, Docker.}\\[1pt]
-% \end{tabularx}
-% 
-% \begin{tabularx}{\linewidth}{ @{}l r@{} }
-% \textbf{Blackwell} & \hfill \href{https://github.com/helpmeagain/blackwell}{Repositório} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{API e aplicação mobile desenvolvida para geração de prontuários eletrônicos de fisioterapia pra uma clínica-escola. A solução foi estruturada com Domain-Driven Design e Clean Architecture, garantindo escalabilidade e facilidade de manutenção. O projeto otimizou o fluxo de atendimento, reduziu erros no registro de dados e agilizou o acesso às informações dos pacientes.}  \\[-2pt]
-% \multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: TypeScript, NestJS, Prisma, Vitest, PostgreSQL, Redis, Docker, React Native, Expo.}\\[1pt]
-% \end{tabularx}
+\section{Projetos}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Weather Dashboard} & \hfill \href{https://youtu.be/OMvqebhPMrA}{Demonstração} — \href{https://github.com/helpmeagain/weather-dashboard}{Repositório} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Dashboard desenvolvido para visualização e análise de dados climáticos, estruturado em uma arquitetura baseada em microsserviços. O sistema realiza a coleta periódica de dados meteorológicos, processamento intermediário, persistência e geração de insights por IA, oferecendo uma visão interativa ao usuário final.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: Python, Go, TypeScript, NestJS, React, Vite, MongoDB, RabbitMQ, Ollama, Docker.}\\[1pt]
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Project Kiwi} & \hfill \href{https://helpmeagain.itch.io/project-kiwi}{Demonstração} — \href{https://github.com/helpmeagain/project-kiwi}{Repositório} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Jogo educacional para ensino de inglês com o objetivo de tornar o aprendizado gamificado mais colaborativo e interativo. O projeto foi implementado com foco em experiência do usuário, jogabilidade em duplas e usabilidade. Os testes com estudantes mostraram que a adição do modo multijogador aumentou o engajamento, a aceitação e o interesse pelo conteúdo.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: Godot, GDScript, Nakama, Docker.}\\[1pt]
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Blackwell} & \hfill \href{https://github.com/helpmeagain/blackwell}{Repositório} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{API e aplicação mobile desenvolvida para geração de prontuários eletrônicos de fisioterapia para uma clínica-escola. A solução foi estruturada com Domain-Driven Design e Clean Architecture, garantindo escalabilidade e facilidade de manutenção. O projeto otimizou o fluxo de atendimento, reduziu erros no registro de dados e agilizou o acesso às informações dos pacientes.}  \\[-2pt]
+\multicolumn{2}{@{}X@{}}{\vspace{1pt}\textbf{Stack}: TypeScript, NestJS, Prisma, Vitest, PostgreSQL, Redis, Docker, React Native, Expo.}\\[1pt]
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
@@ -257,11 +282,11 @@ Lógica de Programação, Banco de Dados, Programação Orientada a Objeto.
 \section{Habilidades}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
 \textbf{Linguagens de programação} & \normalsize{JavaScript, TypeScript, C{\texttt{\#}}, C, Go, Java, Python.}\\
-\textbf{Desenvolvimento Web} & \normalsize{NodeJS, Express, NestJS, React, NextJS, Angular, VueJS, NuxtJS, HTML, CSS, Tailwind, .NET, Entity Framework, Django, Flask, Springboot.}\\
+\textbf{Desenvolvimento Web} & \normalsize{NodeJS, Express, NestJS, React, NextJS, Angular, VueJS, NuxtJS, Tailwind, .NET}\\
 \textbf{Desenvolvimento Mobile} & \normalsize{React Native, Expo, Ionic.}\\
-\textbf{Cibersegurança} & \normalsize{Pentest, Criptografia, Proteção de Dados, Hash Criptográfico, Segurança Ofensiva e Defensiva, Hardening de Sistemas.}\\
+\textbf{Cibersegurança} & \normalsize{Pentest, Criptografia, Linux, Burp Suite, OWASP Top 10, Wireshark.}\\
 \textbf{Banco de dados}  &  \normalsize{MySQL, SQL Server, PostgreSQL, MongoDB, Redis.}\\
-\textbf{Miscelânea}  &  \normalsize{Docker, AWS, Google Cloud, Azure DevOps, Ollama, Godot.}\\  
+\textbf{Ferramentas e Cloud}  &  \normalsize{Docker, AWS, Google Cloud, Azure DevOps, Ollama, Godot.}\\  
 \end{tabularx}
 
 \vfill
