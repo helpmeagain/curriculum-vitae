@@ -6,28 +6,13 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      # Edit here with the names of your latex file and directory (can use ".")
-      DIR: .
-      FILE: curriculo-felipe-marques
-      FILE-ENG: curriculum-felipe-marques
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: cv
-        uses: dante-ev/latex-action@latest
-        with:
-          root_file: ${{ env.FILE }}
-          working_directory: ${{ env.DIR }}
-      - name: cv-en
-        uses: dante-ev/latex-action@latest
-        with:
-          root_file: ${{ env.FILE-ENG }}
-          working_directory: ${{ env.DIR }}
-      - name: move pt cv
-        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
-      - name: move en cv
-        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE-ENG }}.pdf ./github_artifacts/
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+      - name: Build CVs
+        run: nix build .#default -o github_artifacts
       - name: Upload pdfs as artifact
         uses: actions/upload-artifact@v4
         with:

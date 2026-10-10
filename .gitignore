@@ -1,4 +1,6 @@
 dist
+result
+result-*
 
 *.aux
 *.bbl

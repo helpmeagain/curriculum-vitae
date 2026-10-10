@@ -1,11 +1,7 @@
-NAME_PT=curriculo-felipe-marques
-NAME_EN=cv-en
 OUTDIR=dist
 
 all:
-	mkdir -p $(OUTDIR)
-	latexmk -pdf -outdir=$(OUTDIR) $(NAME_PT).tex
-	latexmk -pdf -outdir=$(OUTDIR) $(NAME_EN).tex
+	nix build .#default -o $(OUTDIR)
 
 clean:
-	rm -rf $(OUTDIR)
+	rm -rf $(OUTDIR) result result-*

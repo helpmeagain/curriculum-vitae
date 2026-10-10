@@ -9,32 +9,25 @@ Curriculum Vitæ containing information about professional experience, projects,
 
 ## Local installation
 
-1. Clone the repository:
+The build is defined as a [Nix flake](https://nixos.wiki/wiki/Flakes) (`flake.nix`): it pins the exact TeX Live packages needed (no `texlive-full`) and builds both PDFs hermetically, so the same recipe runs on your machine and in CI.
+
+1. Clone the repository and `cd` into it.
+
+2. With [Nix](https://nixos.org/download) installed and flakes enabled, build both CVs:
 
 ```bash
-git clone <repository-url>
+nix build .#default
 ```
 
-2. Navigate to the project directory:
+The PDFs are written to `result/curriculo-felipe-marques.pdf` and `result/curriculum-felipe-marques.pdf`. `make` does the same thing and copies the output into `dist/`.
+
+To build a single language, or iterate with `latexmk` directly:
 
 ```bash
-cd <project-directory>
+nix build .#curriculo-pt      # Portuguese only
+nix build .#curriculum-en     # English only
+nix develop                   # drop into a shell with latexmk/biber available
 ```
-
-3. Install latexmk in Ubuntu/Debian:
-
-```bash
-sudo apt update
-sudo apt install latexmk texlive-full
-```
-
-4. Compile the files:
-
-```bash
-make
-```
-
-This will generate the PDF versions of the CV in the output or project root directory.
 
 ## Credits
 
